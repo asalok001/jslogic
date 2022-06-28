@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Word Of String </title>
+</head>
+<body>
+    <h3>Longest Word of String</h3>
+
+    <script>
+        var str = 'India'
+        console.log('Length of str',str.length);
+
+        var str1 = 'I Love India';
+        // console.log('Length of str1',str1.split(""));  // It splits every letter
+        console.log('Length of str1',str1.split(" "));    // it splits words after space
+
+        var states = ['up', 'delhi', 'bihar', 'gujrat', 'rajasthan', 'punjab', 'telangana']
+        console.log('Sorting of states ', states.sort());  //sort on basis of alphabetic order
+
+        let students = ['Poonam','Alok','Chhaya', 'Abhay', 'Akash', 'Prabhakar', 'Shu', 'jk'];
+        // sorting on basis of es6 
+        console.log(students.sort((a, b) => b.length - a.length)); //sort via desc order of length
+        console.log(students.sort((a, b) => a.length - b.length)); //sort via asc order of length
+
+
+        // *************** Longest Word Logic **********************
+
+        let longestWord = (text) => {
+            let longest = 0;
+            let splitWord = text.split(' ');
+            for(let i= 0; i<splitWord.length; i++){
+                if(splitWord[i].length > longest){
+                    longest = splitWord[i].length
+                    
+                }
+            }
+            return longest;
+        }
+        console.log(longestWord('React Programming and Tutorial'));
+
+        // ******************* Longest word with ES6 sort property ******************
+
+        let newLong =(text) => {
+            let splitWord = text.split(' ');
+
+            let longest = splitWord.sort((a,b) => b.length - a.length);
+            console.log(longest[0]);
+        }
+
+        newLong('React Programming and Tutorial');
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iso Gramtest</title>
+  </head>
+  <body>
+    <h1>
+      An isogram is a word in which no letter of the alphabet occurs more than
+      one .
+    </h1>
+
+    <script>
+
+    // 1:-   ************By using set**********
+      function isIsogram(str) {
+        if (!str) {
+          return false;
+        }
+
+        const set = new Set(str);
+
+        return set.size === str.length;
+      }
+
+      console.log(isIsogram("")); // false
+      console.log(isIsogram("a")); // true
+      console.log(isIsogram("misconjugatedly")); // true
+      console.log(isIsogram("misconjugatledly")); // false
+
+
+
+    // 2:-   ***********Without using set **********
+
+    function isogramTest(str){
+        str = str.toLowerCase();
+        let arr = str.split('');
+        arr.sort();
+        console.log(arr);
+
+        for(let i=0; i < str.length-1; i++){
+            if(arr[i] == arr[i+1]){
+                return false;
+            }
+            return true;
+        }
+    }
+
+    let str1 = 'poonam';
+    if(isogramTest(str1)){
+        console.log('true');
+    }
+    else{
+        console.log('false');
+    }
+
+    // console.log(isogramTest('poonam'));
+    // console.log(isogramTest('alok'));
+    // console.log(isogramTest('abhay'));
+
+    </script>
+  </body>
+</html>

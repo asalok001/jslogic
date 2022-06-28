@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two number program</title>
+</head>
+<body>
+    <h2>Swap Two Number Program</h2>
+
+    <script>
+        var a=10;
+        var b=2;
+        document.write("<b><h3>first Method</h3></b><br/>");
+        a= a+b;         // a= 10+2 = 12
+        b=a-b;          // b= 12-2 = 10
+        a = a-b;        // a= 12-10 = 2
+        document.write("Value of a =", a, "<br />");
+        document.write("Value of b = ", b, "<br />");
+
+// By Using XOR Operator
+        var a=24;
+        var b=30;
+        document.write("<b><h3>Second Method</h3></b><br/>");
+        a= a^b;         // OR operator a= 0100 , b= 1000 // a=> 1100 
+        b=a^b;          // b =>  1100 ^ 1000 = 0100
+        a = a^b;        // a => 1100 ^ 0100 = 1000 
+        document.write("Value of a =", a, "<br />");
+        document.write("Value of b = ", b);
+
+// Third Way
+        var a = 10;
+        var b = 14;
+        document.write("<b><h3>Third Method</h3></b><br/>");
+        a = b + (b=a, 0);   // a = b + 0;
+        document.write("Value of a =", a, "<br />");
+        document.write("Value of b = ", b);
+
+// Fourth Way. By Destructuring Method   ES6 Property.
+        var a = 25;
+        var b = 15;
+        document.write("<b><h3>Fourth Method</h3></b><br/>");
+        [a,b] = [b,a];
+        document.write("Value of a =", a, "<br />");
+        document.write("Value of b = ", b);
+
+// Fifth Way.
+        var a = 100;
+        var b = 50;
+        document.write("<b><h3>Fifth Method</h3></b><br/>");
+        a = (a*b)/(b=a);
+        document.write("Value of a =", a, "<br />");
+        document.write("Value of b = ", b);
+
+    </script>
+</body>
+</html>

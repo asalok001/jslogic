@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fizz Buzz Problem</title>
+  </head>
+  <body>
+    <h3>Fizz Buzz Problem</h3>
+
+    <!-- If number is divsisble by 3 prints fizz -->
+    <!-- If number is divsisble by 5 prints buzz -->
+    <!-- If number is divsisble by 3 and 5 prints fizzbuzz -->
+    <script>
+      let s = 0;
+
+      // First Method By using For Loop
+      var fizz = (n) => {
+        for (let i = 1; i <= n; i++) {
+          if (i % 3 == 0 && i % 5 == 0) {
+            console.log("FizzBuzz");
+            s++;
+          } else if (i % 3 == 0) {
+            console.log("Fizz");
+          } else if (i % 5 == 0) {
+            console.log("Buzz");
+          } else {
+            console.log(i);
+          }
+        }
+      };
+      fizz(20);
+      console.log("Number Of Fizz Buzz = ", s);
+
+      //   Second Method - By Using Ternary Operator
+
+      let buzz = (n) => {
+        for (let i = 1; i <= n; i++) {
+          (i % 3 == 0 && i % 5 == 0)
+            ? console.log("FizzBuzz")
+            : (i % 3 == 0)
+            ? console.log("Fizz")
+            : (i % 5 == 0)
+            ? console.log("Buzz")
+            : console.log(i);
+        }
+      };
+
+      buzz(20)
+    </script>
+  </body>
+</html>
